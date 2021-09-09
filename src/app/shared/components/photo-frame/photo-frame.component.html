@@ -1,0 +1,11 @@
+<div class="main">
+  <div class="photo-frame-container">
+    <img tabindex="0" class="photo" [alt]="description" [src]="src" (load)="enableWidget()" />
+    <app-like-widget
+      *ngIf="widgetEnabled$ | async"
+      class="like-bar"
+      (liked)="like()"
+      [likes]="likes"
+    ></app-like-widget>
+  </div>
+</div>
